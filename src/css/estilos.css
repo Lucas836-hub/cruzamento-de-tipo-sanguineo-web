@@ -4,11 +4,7 @@ html {
 }
 
 body {
-  font-family: "Poppins", sans serif;
-  max-width: 1120px;
-  margin: 0 auto;
   background: linear-gradient(150deg, #000000, #0000ff);
-  background-size: 120% 120%;
 }
 
 .cabecalho {
@@ -51,7 +47,7 @@ body {
 }
 
 .home {
-  display: flex;
+  
   min-height: calc(100vh - 125px);
   align-items: center;
   justify-content: space-between;
@@ -63,32 +59,55 @@ body {
   flex-direction: column;
   gap: 25px;
   letter-spacing: 2px;
-  padding: 0 15px;
-}
-
-.home .informacoes h1 {
-  font-family: "Raleway", sans serif;
-  font-size: 45px;
-  margin-bottom: 20px;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
 .home .informacoes p {
   font-family: "Raleway", sans serif;
-  font-size: 24px;
+  font-size: 18px;
+}
+
+
+.home .informacoes a{
+  color: #FF0000;
+  font-style: italic;
+}
+
+.home .informacoes a:hover {
+  color: #00BFFF;
+  transition: 0.3s;
+}
+
+.home .ilustracao{
+  max-width: 370px;
+  padding-left: 70px;
+  padding-block-end: 40px;
 }
 
 .parte_funcional{
   flex-direction: row;
   background: #FF8C00;
   display: flex;
+  font-size: 20px;
 }
 
 .parte_funcional .entrada_de_dados{
   flex-direction: column;
-  display: block;
-  gap: 15px;
+  gap: 30px;
   background: #FF6347;
-  max-width: 300px;
+  max-width: 50%;
+  padding-block: 20px;
+  padding-left: 15%;
+  padding-right: 15%;
+
+}
+
+.parte_funcional .resultado . title_res{
+  text-align: center;
+  align-items: center;
+  display: flex;
+
 }
 
 .redes-sociais {
@@ -114,12 +133,6 @@ body {
   border-radius: 50%;
   transform: scale(1.1);
 }
-
-.home .container-foto .foto {
-  max-width: 450px;
-  border-radius: 50%;
-}
-
 
 .home .container-foto img {
   width: 100%;
@@ -149,16 +162,8 @@ body {
   display: none;
 }
 
-.projetos .projeto.ativo {
-  display: block;
-}
 
-
-.projetos .projeto img {
-  height: 100%;
-}
-
-.projetos .btn-mostrar-projetos {
+.parte_funcional .btn-calcular {
   background: none;
   border: 1px solid #fff;
   border-radius: 15px;
@@ -174,15 +179,17 @@ body {
   cursor: pointer;
 }
 
-.projetos .btn-mostrar-projetos:hover {
+.parte_funcional .btn-calcular:hover {
   background: #9443d8;
   transition: 0.3s;
 }
 
-.projetos .btn-mostrar-projetos.remover {
-  display: none;
-}
 
 .footer{
-  background: #00FF00;
+  background: #1E90FF;
+  width: 150%;
+  padding-block: 30px;
+  padding-left: 30px;
+  flex-direction: row;
+
 }

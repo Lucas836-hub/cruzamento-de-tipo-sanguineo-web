@@ -32,54 +32,68 @@
       <a href="#">
         <h1 class="logo"><i>LG</i></h1>
       </a>
-      <a href="#">Cruzamento Sanguineo</a>
+      <a href="#parte_funcional">Cruzamento Sanguineo</a>
     </header>
 
     <section class="home">
+      <div class="ilustracao">
+        <img src="src/imagens/sanguineo.png">
+      </div><br>
       <div class="informacoes">
-      Faz o cruzamento de tipos sanguineos mostrando os calculos e a porcentagem
-No qual ele pode dizer se os serem que estam sendo testados podem ou nao serem parentes proximos (Pai, Mae, filhos) Obviamento ignorando o efeito bombaim / falso O saiba mais em <a href="https://mundoeducacao.uol.com.br/biologia/efeito-bombaimfalso-o.htm">Mundo Educação</a><br>
+        <p><a>
+          ATENÇÃO EM DESENVOLVIMENTO
+        </a></p>
+      <p>Faz o cruzamento de tipos sanguineos mostrando os calculos e a porcentagem
+No qual ele pode dizer se os serem que estam sendo testados podem ou nao serem parentes proximos (Pai, Mae, filhos) Obviamento ignorando o efeito bombaim / falso O saiba mais em <a href="https://mundoeducacao.uol.com.br/biologia/efeito-bombaimfalso-o.htm">Mundo Educação.</a><br></p>
 
-Caso queira Você também pode baixa o repositorio para usar offline <a href="https://github.com/Lucas836-hub/cruzamento_de_tipo_sanguineo"><i>visitar.</i></a>
+<p>Caso queira Você também pode baixa o repositorio para usar offline <a href="https://github.com/Lucas836-hub/cruzamento_de_tipo_sanguineo"><i>visitar.</i></a></p>
       </div>
     </section>
 
-    <section class="parte_funcional">
-      <section class="entrada_de_dados">
-        Tipo sanguineo da Mãe
-        <select name="mae">
-          <option>A</option>
-          <option>AB</option>
-          <option>B</option>
-          <option>O</option>
-        </select><br>
-        Tipo sanguineo do Pai
-        <select name="pai">
-          <option>A</option>
-          <option>AB</option>
-          <option>B</option>
-          <option>O</option>
-        </select><br>
-        Tipo sanguineo do Filho
-        <select name="filho">
-          <option>A</option>
-          <option>AB</option>
-          <option>B</option>
-          <option>O</option>
-        </select>
+    <section class="parte_funcional" id="parte_funcional">
 
-        <br><button class="btn-calcular">Calcular</button>
+      <section class="entrada_de_dados" id="entrada_de_dados">
+        Tipo sanguineo da Mãe
+        <select name="mae" id="lista_mae">
+          <option value="0">A</option>
+          <option value="1">AB</option>
+          <option value="2">B</option>
+          <option value="3">O</option>
+        </select> <br>
+        Tipo sanguineo do Pai
+        <select name="pai" id="lista_pai">
+          <option value="0">A</option>
+          <option value="1">AB</option>
+          <option value="2">B</option>
+          <option value="3">O</option>
+        </select> <br>
+        Tipo sanguineo do Filho
+        <select name="filho" id="lista_filho">
+          <option value="0">A</option>
+          <option value="1">AB</option>
+          <option value="2">B</option>
+          <option value="3">O</option>
+        </select> <br>
+
+        <br><button onclick="calcular_alelos()" class="btn-calcular">Calcular</button>
       </section>
 
-      <ul class="resultado">
-        <div align="center">
-          <a title="Resultado do Cruzamento" target="_blank" align="center">
+      <ul class="resultado" id="resultado" title="Resultado do Cruzamento" target="_blank">
+        <div align="center" class="title_res" >
           Resultado
-        </a></ul>
-        mesej
+        </div>
+        <div id="resposta">
+          <br>
+          aguardando
+        </div>
+          
+      </ul>
         
-      </div>
     </section>
+    <div class="lixo" id="lixo">
+      
+    </div>
+    <script src="./src/js/index.js"></script>
 
   <footer class="footer">
     Desenvolvidor por : Lucas Gabriel

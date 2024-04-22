@@ -21,6 +21,28 @@
   }
 }
 
+@media(max-width: 811px){
+  .home .informacoes h1 {
+    font-size: 30px;
+  }
+
+  .home .informacoes p {
+    font-size: 16px;
+  }
+
+  .home .container-foto img {
+      max-width: 320px;
+  }
+
+  .projetos {
+    padding: 30px;
+  }
+
+  .parte_funcional{
+    flex-direction: column;
+  }
+}
+
 @media(max-width: 425px) {
   .home .informacoes h1 {
     font-size: 30px;
@@ -36,5 +58,9 @@
 
   .projetos {
     padding: 30px;
+  }
+
+  .parte_funcional{
+    flex-direction: column;
   }
 }

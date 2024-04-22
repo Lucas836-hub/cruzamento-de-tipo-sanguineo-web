@@ -1,64 +1,48 @@
-const btnMostrarProjetos = document.querySelector('.btn-mostrar-projetos');
+const botao = document.querySelector('.btn-calcular');
+var todos_tipos=[[["a", "a"],[ "a", "i"]],[["b", "b"], ["b", "i"]],[["a", "b"]],[["i", "i"]]];
 
-let quantidadeDeProjetos = 4;
+var select = document.getElementById('lista_pai')
+select.addEventListener('change', function(){
+    sangue_pai = todos_tipos[select.value];
+})
 
-var ativacao_do_botao_mostrar = new Boolean(false);
+var select = document.getElementById('lista_mae')
+select.addEventListener('change', function(){
+    sangue_mae = todos_tipos[select.value];
+    console.log("passou pela mae");
+    console.log(sangue_mae);
+})
 
-document.addEventListener("DOMContentLoaded", function () {
-  mostrarProjetos(quantidadeDeProjetos);
-});
+var select = document.getElementById('lista_filho')
+select.addEventListener('change', function(){
+    sangue_filho = todos_tipos[select.value];
+})
 
-btnMostrarProjetos.addEventListener('click', mostrarMaisProjetos)
+let vazio=0;
 
-function mostrarProjetos(quantidadeProjetos) {
-  const projetos = document.querySelectorAll('.projeto');
-
-  for (let i = 0; i < quantidadeProjetos; i++) {
-    if (projetos[i]) {
-      projetos[i].classList.add('ativo')
-    }
+function De_alelo_para_letra(alelos){
+  // decodifica os alelos para o tipo sanguineo
+  if (alelos == "aa" || alelos == "ai" || alelos == "ia") {
+    return "A";
+  }if (alelos == "bb" || alelos == "bi" || alelos == "ib") {
+    return "B";
+  }if (alelos == "ab" || alelos == "ba") {
+    return "AB";
+  }if (alelos == "ii") {
+    console.log("tipo O selecionado");
+    return "O";
   }
-  alert("mostrando")
+
 }
 
-function esconderProjetos(quantidadeProjetos){
-  const projetos = document.querySelectorAll('.projeto.ativo');
-  alert(projetos.length)
-  alert("esconder")
-  alert(quantidadeProjetos)
-
-  for (let i = quantidadeProjetos;i == 0; i--) {
-    if (projetos[i]) {
-      projetos[i].classList.add('none')
-    }
-  }
-  alert("saindo do for")
+function cruzamento(){
+   vazio=0;
 }
 
-function mostrarMaisProjetos() {
-  if (ativacao_do_botao_mostrar == false){
-    alert("ta ok")
-    const quantidadeTotalProjetos = document.querySelectorAll('.projeto').length;
-    quantidadeDeProjetos += 4; // Incrementa mais 4 projetos a serem mostrados
-    mostrarProjetos(quantidadeDeProjetos);
-
-    if (quantidadeDeProjetos >= quantidadeTotalProjetos) {
-      btnMostrarProjetos.innerHTML = "Mostrar menos";
-    }
-    ativacao_do_botao_mostrar=true;
-  }
-  
-  else{
-    alert("deu merda")
-    const quantidadeTotalProjetos = document.querySelectorAll('.projeto.ativo').length;
-    quantidadeDeProjetos ; // Incrementa mais 4 projetos a serem mostrados
-    console.log("vai entrar na funcao");
-    esconderProjetos(quantidadeDeProjetos);
-    console.log("saiu dela");
-
-    if (quantidadeDeProjetos >= quantidadeTotalProjetos) {
-      btnMostrarProjetos.innerHTML = "Mostrar mais";
-      ativacao_do_botao_mostrar=false;
-    }
-  }
-}
+botao.onclick = function() {
+  global sangue_mae
+  console.log("testando");
+  console.log(sangue_mae);
+  //console.log(sangue_mae);
+  //resposta.innerHTML="<br>Mãe tipo sanguineo ",De_alelo_para_letra(sangue_mae[0]);
+};
